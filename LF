@@ -1,0 +1,13 @@
+class DateTime(Date):
+  def display(self):
+      return "{0}-{1}-{2} - 00:00:00PM".format(self.month, self.day, self.year)
+
+
+datetime1 = DateTime(10, 10, 1990)
+datetime2 = DateTime.millenium(10, 10)
+
+isinstance(datetime1, DateTime) # True
+isinstance(datetime2, DateTime) # False
+
+datetime1.display() # returns "10-10-1990 - 00:00:00PM"
+datetime2.display() # returns "10-10-2000" because it's not a DateTime object but a Date object. Check the implementation of the millenium method on the Date class for more details.
